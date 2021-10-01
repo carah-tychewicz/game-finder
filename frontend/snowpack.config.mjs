@@ -15,6 +15,7 @@ export default {
     ['@snowpack/plugin-sass', {
       native: true,
     }],
+    ['@snowpack/plugin-dotenv'],
   ],
   routes: [
     {

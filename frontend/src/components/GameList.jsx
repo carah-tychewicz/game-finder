@@ -48,17 +48,15 @@ import React, {useState, useEffect} from 'react';
 // }
 
 function GameList() {
-  const [data, setData] = React.useState(null);
+  const [gameList, setGameList] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch("https://api.rawg.io/api/games?key=" + process.env.API_KEY_RAWG)
       .then((res) => res.json())
-      .then((data) => setData(data.apiKey));
-  }, []);
+      .then((gameList) => setGameList(gameList.results));
+  }, []);  
 
-  
-
-    return (<div>{data}</div>);
+  return (gameList);
 }
 
 
