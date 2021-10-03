@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+
 
 // class GameList extends React.Component {
 
@@ -47,16 +47,21 @@ import React, {useState, useEffect} from 'react';
 //   }
 // }
 
+import React, { useState, useEffect } from 'react';
+
 function GameList() {
   const [gameList, setGameList] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("https://api.rawg.io/api/games?key=" + process.env.API_KEY_RAWG)
+    fetch(import.meta.env.SNOWPACK_PUBLIC_API)
       .then((res) => res.json())
       .then((gameList) => setGameList(gameList.results));
   }, []);  
 
-  return (gameList);
+  console.log(gameList)
+
+  return (<p>test</p>);
+  
 }
 
 
