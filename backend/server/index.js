@@ -4,8 +4,8 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.get("/api/games", (req, res) => { 
-  
+app.get("/api", (req, res) => { 
+  res.json({ apiUrl: `${process.env.API_URL}` });
 });
 
 app.listen(PORT, () => {
